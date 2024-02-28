@@ -518,3 +518,31 @@ body {
 .plan-cards .active {
   border: 1px solid var(--clr-accent-500);
 }
+
+/* Add-Ons-Cards Classes */
+
+.add-ons-cards{
+  display: grid;
+  gap: 1.2rem;
+  --spacer: 0rem;
+}
+
+.add-ons-cards .card {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 1rem;
+}
+
+.add-ons-cards .card input {
+  max-width: 10px;
+  margin-inline: 1rem;
+  padding: 1rem;
+  
+}
+
+.add-ons-cards .card .card-title {
+  vertical-align: middle;
+  display: inline-block;
+}
