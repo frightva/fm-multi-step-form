@@ -1,6 +1,8 @@
 import './App.css';
 import desktopImg from './assets/images/bg-sidebar-desktop.svg'
 import mobileImg from './assets/images/bg-sidebar-mobile.svg'
+import Step1 from './components/Step1';
+import Step2 from './components/Step2';
 function App() {
   return (
     <>
@@ -52,32 +54,8 @@ function App() {
             </div>
             <div className='user-column spacer-bottom padding-top-2'>
 
-              <form className='form'>
-                <h1 className='text-accent-700 fs-primary-heading fw-bold padding-inline-1'>Personal info</h1>
-                <p className='fs-body fw-medium text-neutral-200 padding-inline-1'>Please provide your name, email address, and phone number.</p>
-                <label className='text-accent-700 padding-inline-1 fs-body' htmlFor="">Name</label>
-                <div className='padding-inline-1'>
-                  <input type="text"
-                  className='fs-body'
-                  placeholder='e.g. Stephen King' />
-                </div>
-              
+              <Step2 />
 
-                <label className='text-accent-700 padding-inline-1 fs-body' htmlFor="">Email Address</label>
-                <div className='padding-inline-1'>
-                  <input type="text"
-                  className='fs-body'
-                  placeholder='e.g. stephenking@lorem.com' />
-                </div>
-              
-                <label className='text-accent-700 padding-inline-1 fs-body' htmlFor="">Phone Number</label>
-                <div className='padding-inline-1'>
-                  <input type="text"
-                  className='fs-body'
-                  placeholder='e.g. +1 234 567 890' />
-                </div>
-              </form>
-              
               <div className='action-btns | fw-medium'>
                 <button className='prev-btn'>
                   Go Back
