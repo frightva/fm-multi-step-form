@@ -559,3 +559,13 @@ body {
   top: 0rem;
   cursor: pointer;
 }
+
+.change-btn {
+  border: none;
+  background-color: transparent;
+  color: var(--clr-neutral-200);
+  cursor: pointer;
+  padding: 0rem;
+  margin: 0;
+  text-decoration: underline;
+}

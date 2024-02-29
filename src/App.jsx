@@ -4,6 +4,7 @@ import mobileImg from './assets/images/bg-sidebar-mobile.svg'
 import Step1 from './components/Step1';
 import Step2 from './components/Step2';
 import Step3 from './components/Step3';
+import Step4 from './components/Step4';
 function App() {
   return (
     <>
@@ -55,7 +56,7 @@ function App() {
             </div>
             <div className='user-column spacer-bottom padding-top-2'>
 
-              <Step3 />
+              <Step4 />
 
               <div className='action-btns | fw-medium'>
                 <button className='prev-btn'>
