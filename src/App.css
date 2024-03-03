@@ -592,3 +592,11 @@ body {
 .border-bottom{
   border-bottom: 1px solid rgba(155, 156, 161, .3);
 }
+
+.thank-you-msg{
+  text-align: center;
+  margin-block: 15%;
+}
+.thank-you-msg img {
+  margin-inline: auto;
+}
