@@ -200,6 +200,9 @@ svg {
   font-size: var(--fs-700);
 }
 
+.margin-top-1-5{
+  margin-top: 1.5rem;
+}
 .padding-top-1{
   padding-top: 1rem;
 }
@@ -345,7 +348,7 @@ body {
 }
 
 .next-btn {
-  margin: 5% 1rem;
+  margin: 0rem;
   padding: .6rem 1.2rem;
   background-color: var(--clr-accent-700);
   color: var(--clr-primary-100);
@@ -363,7 +366,8 @@ body {
   background-color: transparent;
   color: var(--clr-neutral-200);
   cursor: pointer;
-  padding: .6rem 1.2rem;
+  padding: 0rem 1.2rem;
+  margin: 0rem;
   --spacer: 0rem;
 }
 .prev-btn:hover {
@@ -375,7 +379,7 @@ body {
   display: flex;
   justify-content: space-between;
   --spacer: 0rem;
-  margin-top: 12%;
+  margin-top: 10%;
  
 }
 
@@ -568,4 +572,23 @@ body {
   padding: 0rem;
   margin: 0;
   text-decoration: underline;
+}
+
+/* Finishing Up Classes */
+.flex-space-between{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.p-info-text{
+  background-color: transparent;
+  color: var(--clr-neutral-200);
+  cursor: pointer;
+  padding: 0rem;
+  margin: 0;
+}
+
+.border-bottom{
+  border-bottom: 1px solid rgba(155, 156, 161, .3);
 }
