@@ -11,16 +11,129 @@ import useMultiFormHook from './components/useMultiFormHook';
 
 
 function App() {
-  const [ifContitnueNextStep, setIfContitnueNextStep] = useState(false)
-  const { steps, currentStep, stepsLength, handleNextBtn, handlePrevBtn, goTo } = useMultiFormHook([ <Step1 setIfContitnueNextStep={setIfContitnueNextStep} />, <Step2 />, <Step3 />, <Step4 />, <ThankYouMsg /> ])
 
-  console.log(stepsLength - 1)
+  const cost_ARRAY = [
+    //Monthly COST
+    {
+      title: 'Monthly',
+      arcade: '$9/mo',
+      advanced: '$12/mo',
+      addoncost1: '+$1/mo',
+      addoncost2: '+$2/mo',
+      addoncost3: '+$2/mo',
+      pro: '$15/mo'
+    }, 
+    //Yearly COST
+    {
+      title: 'Yearly',
+      arcade: '$90/yr',
+      advanced: '$120/yr',
+      pro: '$150/yr',
+      addoncost1: '+$10/yr',
+      addoncost2: '+$20/yr',
+      addoncost3: '+$20/yr',
+      text: '2 months free'
+    }
+  ]
 
+  const [summary_ARRAY, setSummary_ARRAY] = useState([])
+
+  const [displayName, setDisplayName] = useState('Monthly')
+  const [togglePlan, setTogglePlan] = useState('arcade')
+  let plan = 0;
+
+  const [checked1, setChecked1] = useState(false)
+  const [checked2, setChecked2] = useState(false)
+  const [checked3, setChecked3] = useState(false)
+
+  
+  let addOnValue1 = 0; 
+  let addOnValue2 = 0; 
+  let addOnValue3 = 0; 
+
+
+  const { steps, currentStep, stepsLength, handleNextBtn, handlePrevBtn, goTo } = useMultiFormHook([ 
+  <Step1 />, 
+  <Step2 cost_ARRAY={cost_ARRAY} displayName={displayName} setDisplayName={setDisplayName} togglePlan={togglePlan}
+  setTogglePlan={setTogglePlan} />,
+  <Step3 displayName={displayName}
+  cost_ARRAY={cost_ARRAY}
+  checked1={checked1}
+  checked2={checked2}
+  checked3={checked3}
+  setChecked1={setChecked1}
+  setChecked2={setChecked2}
+  setChecked3={setChecked3}
+  addOnValue1={addOnValue1}
+  addOnValue2={addOnValue2}
+  addOnValue3={addOnValue3}
+  />,
+  <Step4
+  summary_ARRAY={summary_ARRAY} />,
+  <ThankYouMsg /> ])
+
+
+
+  if(displayName === 'Monthly') {
+    if(checked1) {
+      addOnValue1 = 1;
+    } 
+    if(checked2) {
+      addOnValue2 = 2;
+    } 
+    if(checked3) {
+      addOnValue3 = 2;
+    }
+  } else if (displayName === 'Yearly') {
+    if(checked1) {
+      addOnValue1 = 10;
+    } 
+    if(checked2) {
+      addOnValue2 = 20;
+    } 
+    if(checked3) {
+      addOnValue3 = 20;
+    }
+  }
+
+
+  if(displayName === 'Monthly') {
+    if(togglePlan === 'arcade') {
+      plan = 9;
+    } else if (togglePlan === 'advanced') {
+      plan = 12;
+    } else if (togglePlan === 'pro') {
+      plan = 15;
+    }
+  } else if(displayName === 'Yearly') {
+    if(togglePlan === 'arcade') {
+      plan = 90;
+    } else if (togglePlan === 'advanced') {
+      plan = 120;
+    } else if (togglePlan === 'pro') {
+      plan = 150;
+    }
+  }
+  const totalValue = plan + addOnValue1+addOnValue2+addOnValue3;
+
+  const handleCost = () => {
+    if(displayName === 'Monthly') {
+      setSummary_ARRAY([{...summary_ARRAY,
+        togglePlan: togglePlan, planTime: "Monthly", plan: plan, addOnValue1: addOnValue1, addOnValue2: addOnValue2, addOnValue3: addOnValue3, totalValue: totalValue   }])
+    } else {
+      setSummary_ARRAY([{...summary_ARRAY,
+        togglePlan: togglePlan, planTime: "Yearly", plan: plan, addOnValue1: addOnValue1, addOnValue2: addOnValue2, addOnValue3: addOnValue3, totalValue: totalValue   }])
+    }
+  }
+  console.log(summary_ARRAY)
+  
   // <Step1 />, <Step2 />, <Step3 />, <Step4 />, <ThankYouMsg /> 
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    handleCost()
     handleNextBtn()
+    
   }
 
   return (
@@ -73,7 +186,9 @@ function App() {
             </div>
             <div className='user-column spacer-bottom padding-top-2'>
 
-              <form onSubmit={(e) => handleSubmit(e)}>
+              <form onSubmit={(e) => {
+                handleSubmit(e)}}>
+
                 {steps}
            
                 {currentStep !== stepsLength - 1 && <div className='action-btns | fw-medium'>

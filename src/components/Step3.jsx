@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
 
-function Step3() {
-  const [checked1, setChecked1] = useState(false)
-  const [checked2, setChecked2] = useState(false)
-  const [checked3, setChecked3] = useState(false)
+function Step3({cost_ARRAY, displayName, checked1, checked2, checked3, setChecked1, setChecked2, setChecked3, addOnValue1, addOnValue2, addOnValue3 }) {
 
+
+
+    
 
   return (
     <div className='form'>
       <h1 className='text-accent-700 fs-primary-heading fw-bold padding-inline-1'>Pick add-ons</h1>
       <p className='fs-body fw-medium text-neutral-200 padding-inline-1'>Add-ons help enhance your gaming experience.</p>
       <div className='add-ons-cards'>
-        <div className={checked1 ? 'card active' : 'card'} onClick={() => setChecked1(!checked1)}>
+        <div className={checked1 ? 'card active' : 'card'} onClick={(e) =>{setChecked1(!checked1)}}>
           <div className='card-left'>
             <div className='checkbox-container'>
               <input 
-              onChange={() => setChecked1(!checked1)}
+              onChange={(e) => {setChecked1(!checked1)}}
               type="checkbox"
               checked={checked1} />
             </div>
@@ -25,10 +25,15 @@ function Step3() {
             </div>
           </div>
           <div>
-            <p className='fw-medium text-accent-500'>+$1/mo</p>
+            <p className='fw-medium text-accent-500'>{cost_ARRAY.map((item) => {
+              return (
+                displayName === item.title &&
+                item.addoncost1
+              )
+            })}</p>
           </div>
         </div>
-        <div className={checked2 ? 'card active' : 'card'} onClick={() => setChecked2(!checked2)}>
+        <div className={checked2 ? 'card active' : 'card'} onClick={(e) => {setChecked2(!checked2)}}>
           <div className='card-left'>
             <div className='checkbox-container'>
               <input 
@@ -42,7 +47,12 @@ function Step3() {
             </div>
           </div>
           <div>
-            <p className='fw-medium text-accent-500'>+$2/mo</p>
+            <p className='fw-medium text-accent-500'>{cost_ARRAY.map((item) => {
+              return (
+                displayName === item.title &&
+                item.addoncost2
+              )
+            })}</p>
           </div>
         </div>
         <div className={checked3 ? 'card active' : 'card'} onClick={() => setChecked3(!checked3)}>
@@ -59,7 +69,12 @@ function Step3() {
             </div>
           </div>
           <div>
-            <p className='fw-medium text-accent-500'>+$2/mo</p>
+            <p className='fw-medium text-accent-500'>{cost_ARRAY.map((item) => {
+              return (
+                displayName === item.title &&
+                item.addoncost3
+              )
+            })}</p>
           </div>
         </div>
       </div>

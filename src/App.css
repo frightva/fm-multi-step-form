@@ -465,7 +465,7 @@ body {
 }
 
 .plan-toggle-btn p{
-  cursor: pointer;
+  cursor: default;
 }
 
 @media (max-width: 50em) {
