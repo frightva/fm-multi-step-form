@@ -348,7 +348,7 @@ body {
 }
 
 .next-btn {
-  margin: 0rem;
+  margin: 0rem 0rem 0rem auto;
   padding: .6rem 1.2rem;
   background-color: var(--clr-accent-700);
   color: var(--clr-primary-100);

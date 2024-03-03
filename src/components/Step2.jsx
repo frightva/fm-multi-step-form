@@ -5,7 +5,7 @@ import card3Img from '../assets/images/icon-pro.svg'
 
 function Step2() {
   const [toggleYM, setToggleYM] = useState(false)
-  const [togglePlan, setTogglePlan] = useState('Arcade')
+  const [togglePlan, setTogglePlan] = useState('arcade')
 
 
 
