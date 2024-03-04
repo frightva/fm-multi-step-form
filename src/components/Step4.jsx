@@ -8,7 +8,7 @@ function Step4({ summary_ARRAY }) {
 
       {summary_ARRAY.map((cost) => {
         return (
-        <div className='finishing-up-container padding-inline-1 '>
+        <div className='finishing-up-container padding-inline-1' style={{'--spacer': '.4rem'}}>
           <div className='border-bottom | flex-space-between '>
             <div>
               <h2 className='fw-medium text-accent-700 fs-450 '>{cost.togglePlan} ({cost.planTime})</h2>
@@ -19,8 +19,8 @@ function Step4({ summary_ARRAY }) {
             </div>
           </div>
   
-          <div className='margin-top-1-5'>
-            {cost.addOnValue1 ? <div className='flex-space-between'>
+          <div className='margin-top-1-5' style={{'--spacer': '1rem'}}>
+            {cost.addOnValue1 ? <div className='flex-space-between' style={{'--spacer': '0.6rem'}}>
               <p className='p-info-text | text-accent-700'>
                 Online service
               </p>
@@ -28,7 +28,7 @@ function Step4({ summary_ARRAY }) {
                 +${cost.addOnValue1}/mo
               </p>
             </div> : ''}
-            {cost.addOnValue2 ? <div className='flex-space-between'>
+            {cost.addOnValue2 ? <div className='flex-space-between' style={{'--spacer': '0.4rem'}}>
               <p className='p-info-text | text-accent-700'>
                 Larger Storage
               </p>

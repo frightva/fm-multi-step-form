@@ -30,7 +30,7 @@ function Step2({cost_ARRAY, displayName, setDisplayName, togglePlan, setTogglePl
         <div className='plan-cards'>
           <div onClick={() => setTogglePlan('arcade')} className={togglePlan === 'arcade' ? 'card active' : 'card'}>
             <img src={card1Img} alt="" />
-            <div>
+            <div className='fs-200'>
               <h2 className='fw-bold text-accent-700 fs-450'>Arcade</h2>
               <p className='fw-medium text-neutral-200'>{item.arcade}</p>
               <p className='fw-medium text-accent-700'>{item.text}</p>
@@ -38,7 +38,7 @@ function Step2({cost_ARRAY, displayName, setDisplayName, togglePlan, setTogglePl
           </div>
           <div onClick={() => setTogglePlan('advanced')} className={togglePlan === 'advanced' ? 'card active' : 'card'}>
             <img src={card2Img} alt="" />
-            <div>
+            <div className='fs-200'>
               <h2 className='fw-bold text-accent-700 fs-450'>Advanced</h2>
               <p className='fw-medium text-neutral-200'>{item.advanced}</p>
               <p className='fw-medium text-accent-700'>{item.text}</p>
@@ -46,7 +46,7 @@ function Step2({cost_ARRAY, displayName, setDisplayName, togglePlan, setTogglePl
           </div>
           <div onClick={() => setTogglePlan('pro')} className={togglePlan === 'pro' ? 'card active' : 'card'}>
             <img src={card3Img} alt="" />
-            <div>
+            <div className='fs-200'>
               <h2 className='fw-bold text-accent-700 fs-450'>Pro</h2>
               <p className='fw-medium text-neutral-200'>{item.pro}</p>
               <p className='fw-medium text-accent-700'>{item.text}</p>

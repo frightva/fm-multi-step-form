@@ -125,7 +125,7 @@ function App() {
         togglePlan: togglePlan, planTime: "Yearly", plan: plan, addOnValue1: addOnValue1, addOnValue2: addOnValue2, addOnValue3: addOnValue3, totalValue: totalValue   }])
     }
   }
-  console.log(summary_ARRAY)
+
   
   // <Step1 />, <Step2 />, <Step3 />, <Step4 />, <ThankYouMsg /> 
 
@@ -133,8 +133,9 @@ function App() {
     e.preventDefault()
     handleCost()
     handleNextBtn()
-    
   }
+
+
 
   return (
     <>
@@ -146,8 +147,9 @@ function App() {
               <img className='mobile-img' src={mobileImg} alt="" />
               <img className='desktop-img' src={desktopImg} alt="" />
               <ol role='list' className='list-steps'>
-                <li onClick={() => goTo(0)}>
-                  <span className="list-numbering | bg-accent-300 text-accent-700 fs-200">
+                <li className={currentStep === 0 ? 'li-step active' : 'li-step'} onClick={(e) => {
+                  goTo(0)}}>
+                  <span className="list-numbering | text-accent-700 fs-200">
                     1
                   </span>
                   <div className='list-text'>
@@ -155,8 +157,9 @@ function App() {
                     <p className='text-primary-100 fw-medium'>YOUR INFO</p>
                   </div>
                 </li>
-                <li onClick={() => goTo(1)}>
-                  <span className="list-numbering text-primary-100 fs-200">
+                <li className={currentStep === 1 ? 'li-step active' : 'li-step'} onClick={(e) => {
+                  goTo(1)}}>
+                  <span className="list-numbering | fs-200">
                     2
                   </span>
                   <div className='list-text'>
@@ -164,8 +167,9 @@ function App() {
                     <p className='text-primary-100 fw-medium'>SELECT PLAN</p>
                   </div>
                 </li>
-                <li onClick={() => goTo(2)}>
-                  <span className="list-numbering text-primary-100 fs-200">
+                <li className={currentStep === 2 ? 'li-step active' : 'li-step'} onClick={() => {
+                  goTo(2)}}>
+                  <span className="list-numbering | fs-200">
                     3
                   </span>
                   <div className='list-text'>
@@ -173,8 +177,9 @@ function App() {
                     <p className='text-primary-100 fw-medium'>ADD-ONS</p>
                   </div>
                 </li>
-                <li onClick={() => goTo(3)}>
-                  <span className="list-numbering text-primary-100 fs-200">
+                <li className={currentStep === 3 ? 'li-step active' : 'li-step'} onClick={() => {
+                  goTo(3)}}>
+                  <span className="list-numbering | fs-200">
                     4
                   </span>
                   <div className='list-text'>

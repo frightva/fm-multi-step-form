@@ -19,7 +19,7 @@
   --clr-accent-700: hsl(212, 55%, 13%);
 
   --fs-100: .7rem;
-  --fs-200: .85rem;
+  --fs-200: .7rem;
   --fs-300: 1rem;
   --fs-400: 1.1rem;
   --fs-450: 1.2rem;
@@ -42,6 +42,7 @@
   :root {
     --fs-primary-heading: var(--fs-700);
     --fs-body: var(--fs-300);
+    --fs-200: .85rem;  
   }
 }
 
@@ -293,15 +294,30 @@ body {
   }
 
 }
+/* Steps Classes */
 
 .list-steps {
   position: absolute;
   top: 0rem;
   margin: 2rem 1rem;
+  width: 200px;
 }
 
-.list-steps li {
+.li-step:hover .list-numbering {
+  opacity: .6;
+}
+
+.active .list-numbering{
+  background-color: var(--clr-accent-300);
+  color: var(--clr-accent-700);
+
+}
+
+.list-steps .li-step {
   margin-block: 1rem;
+  width: 100%;
+
+  cursor: pointer;
 }
 
 .list-text {
@@ -315,6 +331,7 @@ body {
   border-radius: 100px;
   border: 1px solid var(--clr-primary-100);
   font-weight: var(--fw-bold);
+  color: var(--clr-primary-100);
 
 }
 
@@ -329,6 +346,7 @@ body {
     left: 0rem;
     right: 0rem;
     gap: 1rem;
+    margin-inline: auto;
   }
 
   .list-text{
@@ -377,16 +395,19 @@ body {
 
 .action-btns {
   display: flex;
+  position: relative;
   justify-content: space-between;
   --spacer: 0rem;
-  margin-top: 10%;
- 
+  margin-top: 5rem; 
+}
+
+@media (min-width: 50em) {
+  .form{
+    height: 21em;
+  }
 }
 
 @media (max-width: 50em) {
-
-  
-
   .form {
     position: absolute;
     z-index: 2;
@@ -402,7 +423,7 @@ body {
 
   .next-btn,
   .prev-btn {
-    --spacer: 1rem;
+    --spacer: 0rem;
   }
 
   
@@ -414,7 +435,7 @@ body {
     background-color: var(--clr-primary-100);
     display: flex;
     justify-content: space-between;
-
+    padding: .5rem;
   }
   
 }
@@ -600,3 +621,4 @@ body {
 .thank-you-msg img {
   margin-inline: auto;
 }
+
