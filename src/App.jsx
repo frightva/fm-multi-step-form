@@ -15,7 +15,7 @@ function App() {
   const cost_ARRAY = [
     //Monthly COST
     {
-      key: crypto.randomUUID(),
+      key: '1',
       title: 'Monthly',
       arcade: '$9/mo',
       advanced: '$12/mo',
@@ -26,7 +26,7 @@ function App() {
     }, 
     //Yearly COST
     {
-      key: crypto.randomUUID(),
+      key: '2',
       title: 'Yearly',
       arcade: '$90/yr',
       advanced: '$120/yr',
@@ -136,11 +136,11 @@ function App() {
     if(displayName === 'Monthly') {
       setSummary_ARRAY([{...summary_ARRAY,
         name: name, email: email, phoneNumb:phoneNumb,
-        togglePlan: togglePlan, planTime: "Monthly", plan: plan, addOnValue1: addOnValue1, addOnValue2: addOnValue2, addOnValue3: addOnValue3, totalValue: totalValue, key: crypto.randomUUID()   }])
+        togglePlan: togglePlan, planTime: "Monthly", plan: plan, addOnValue1: addOnValue1, addOnValue2: addOnValue2, addOnValue3: addOnValue3, totalValue: totalValue, key: '1'   }])
     } else {
       setSummary_ARRAY([{...summary_ARRAY,
         name: name, email: email, phoneNumb: phoneNumb,
-        togglePlan: togglePlan, planTime: "Yearly", plan: plan, addOnValue1: addOnValue1, addOnValue2: addOnValue2, addOnValue3: addOnValue3, totalValue: totalValue, key: crypto.randomUUID()   }])
+        togglePlan: togglePlan, planTime: "Yearly", plan: plan, addOnValue1: addOnValue1, addOnValue2: addOnValue2, addOnValue3: addOnValue3, totalValue: totalValue, key: '2'   }])
     }
   }
 
