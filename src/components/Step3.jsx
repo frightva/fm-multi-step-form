@@ -25,12 +25,14 @@ function Step3({cost_ARRAY, displayName, checked1, checked2, checked3, setChecke
             </div>
           </div>
           <div>
-            <p className='fw-medium text-accent-500'>{cost_ARRAY.map((item) => {
+            {cost_ARRAY.map((item) => {
               return (
                 displayName === item.title &&
-                item.addoncost1
-              )
-            })}</p>
+                <p key={item.key} className='fw-medium text-accent-500'>
+                  {item.addoncost1}
+                </p>
+                )
+              })}
           </div>
         </div>
         <div className={checked2 ? 'card active' : 'card'} onClick={(e) => {setChecked2(!checked2)}}>
@@ -47,12 +49,14 @@ function Step3({cost_ARRAY, displayName, checked1, checked2, checked3, setChecke
             </div>
           </div>
           <div>
-            <p className='fw-medium text-accent-500'>{cost_ARRAY.map((item) => {
+            {cost_ARRAY.map((item) => {
               return (
                 displayName === item.title &&
-                item.addoncost2
-              )
-            })}</p>
+                <p key={item.key} className='fw-medium text-accent-500'>
+                  {item.addoncost2}
+                </p>
+                )
+              })}
           </div>
         </div>
         <div className={checked3 ? 'card active' : 'card'} onClick={() => setChecked3(!checked3)}>
@@ -69,12 +73,14 @@ function Step3({cost_ARRAY, displayName, checked1, checked2, checked3, setChecke
             </div>
           </div>
           <div>
-            <p className='fw-medium text-accent-500'>{cost_ARRAY.map((item) => {
+            {cost_ARRAY.map((item) => {
               return (
                 displayName === item.title &&
-                item.addoncost3
-              )
-            })}</p>
+                <p key={item.key} className='fw-medium text-accent-500'>
+                  {item.addoncost3}
+                </p>
+                )
+              })}
           </div>
         </div>
       </div>

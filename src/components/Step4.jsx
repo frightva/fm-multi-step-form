@@ -8,7 +8,7 @@ function Step4({ summary_ARRAY, handleChangeBtn }) {
 
       {summary_ARRAY.map((cost) => {
         return (
-        <div className='finishing-up-container padding-inline-1' style={{'--spacer': '.4rem'}}>
+        <div key={cost.key} className='finishing-up-container padding-inline-1' style={{'--spacer': '.4rem'}}>
           <div className='border-bottom | flex-space-between '>
             <div>
               <h2 className='fw-medium text-accent-700 fs-450 '>{cost.togglePlan} ({cost.planTime})</h2>

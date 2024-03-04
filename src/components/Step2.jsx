@@ -4,12 +4,12 @@ import card2Img from '../assets/images/icon-advanced.svg'
 import card3Img from '../assets/images/icon-pro.svg'
 
 function Step2({cost_ARRAY, displayName, setDisplayName, togglePlan, setTogglePlan}) {
-  const [toggleYM, setToggleYM] = useState(false)
+  const [toggleYM, setToggleYM] = useState(displayName === 'Monthly' ? false : true)
 
 
 
   const handleYearMonth = (e) => {
-    e.preventDefault()
+
     setToggleYM(!toggleYM)
     if(toggleYM) {
       setDisplayName('Monthly')
@@ -17,6 +17,7 @@ function Step2({cost_ARRAY, displayName, setDisplayName, togglePlan, setTogglePl
       setDisplayName('Yearly')
     }
   }
+
 
   return (
     <div className='form'>
@@ -27,7 +28,7 @@ function Step2({cost_ARRAY, displayName, setDisplayName, togglePlan, setTogglePl
       {cost_ARRAY.map((item) => {
         return (
         item.title === displayName &&
-        <div className='plan-cards'>
+        <div key={item.key} className='plan-cards'>
           <div onClick={() => setTogglePlan('Arcade')} className={togglePlan === 'Arcade' ? 'card active' : 'card'}>
             <img src={card1Img} alt="" />
             <div className='fs-200'>
@@ -65,7 +66,7 @@ function Step2({cost_ARRAY, displayName, setDisplayName, togglePlan, setTogglePl
         onClick={(e) => {
           handleYearMonth(e)
           }} className='toggle-btn' type='button'>
-        <span className={!toggleYM ? 'span-toggle-monthly' : 'span-toggle-yearly'}></span>
+        <span className={toggleYM ? 'span-toggle-yearly' : 'span-toggle-monthly'}></span>
         </button>
 
         <p className={toggleYM ? 'fw-medium text-accent-700' : 'fw-medium text-neutral-200'}>Yearly</p>
