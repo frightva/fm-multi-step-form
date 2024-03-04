@@ -46,7 +46,10 @@ function App() {
   const [checked2, setChecked2] = useState(false)
   const [checked3, setChecked3] = useState(false)
 
-  
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phoneNumb, setPhoneNumb] = useState('')
+
   let addOnValue1 = 0; 
   let addOnValue2 = 0; 
   let addOnValue3 = 0; 
@@ -56,7 +59,13 @@ function App() {
   }
   
   const { steps, currentStep, stepsLength, handleNextBtn, handlePrevBtn, goTo } = useMultiFormHook([ 
-  <Step1 />, 
+  <Step1
+  name={name}
+  email={email}
+  phoneNumb={phoneNumb}
+  setName={setName}
+  setEmail={setEmail}
+  setPhoneNumb={setPhoneNumb} />, 
   <Step2 cost_ARRAY={cost_ARRAY} displayName={displayName} setDisplayName={setDisplayName} togglePlan={togglePlan}
   setTogglePlan={setTogglePlan} />,
   <Step3 displayName={displayName}
@@ -124,9 +133,11 @@ function App() {
   const handleCost = () => {
     if(displayName === 'Monthly') {
       setSummary_ARRAY([{...summary_ARRAY,
+        name: name, email: email, phoneNumb:phoneNumb,
         togglePlan: togglePlan, planTime: "Monthly", plan: plan, addOnValue1: addOnValue1, addOnValue2: addOnValue2, addOnValue3: addOnValue3, totalValue: totalValue   }])
     } else {
       setSummary_ARRAY([{...summary_ARRAY,
+        name: name, email: email, phoneNumb: phoneNumb,
         togglePlan: togglePlan, planTime: "Yearly", plan: plan, addOnValue1: addOnValue1, addOnValue2: addOnValue2, addOnValue3: addOnValue3, totalValue: totalValue   }])
     }
   }

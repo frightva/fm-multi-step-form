@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Step1({setIfContitnueNextStep}) {
+function Step1({ name, email, phoneNumb, setName, setEmail, setPhoneNumb }) {
 
 
   return (
@@ -12,7 +12,9 @@ function Step1({setIfContitnueNextStep}) {
         <input type="text"
         className='fs-body'
         placeholder='e.g. Stephen King'
-        required />
+        required
+        value={name}
+        onChange={(e) => setName(e.target.value)} />
       </div>
     
 
@@ -21,7 +23,9 @@ function Step1({setIfContitnueNextStep}) {
         <input type="text"
         className='fs-body'
         placeholder='e.g. stephenking@lorem.com'
-        required />
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)} />
       </div>
     
       <label className='text-accent-700 padding-inline-1 fs-body' htmlFor="">Phone Number</label>
@@ -29,7 +33,9 @@ function Step1({setIfContitnueNextStep}) {
         <input type="text"
         className='fs-body'
         placeholder='e.g. +1 234 567 890'
-        required />
+        required
+        value={phoneNumb}
+        onChange={(e) => setPhoneNumb(e.target.value)} />
       </div>
     </div>
   )
