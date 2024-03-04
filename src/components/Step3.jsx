@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Step3({cost_ARRAY, displayName, checked1, checked2, checked3, setChecked1, setChecked2, setChecked3, addOnValue1, addOnValue2, addOnValue3 }) {
+function Step3({cost_ARRAY, displayName, checked1, checked2, checked3, setChecked1, setChecked2, setChecked3 }) {
 
 
 
