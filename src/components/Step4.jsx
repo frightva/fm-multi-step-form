@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Step4({ summary_ARRAY }) {
+function Step4({ summary_ARRAY, handleChangeBtn }) {
   return (
     <div className='form spacer-bottom'>
       <h1 className='text-accent-700 fs-primary-heading fw-bold padding-inline-1'>Finishing up</h1>
@@ -12,7 +12,7 @@ function Step4({ summary_ARRAY }) {
           <div className='border-bottom | flex-space-between '>
             <div>
               <h2 className='fw-medium text-accent-700 fs-450 '>{cost.togglePlan} ({cost.planTime})</h2>
-              <button className='change-btn'>Change</button>
+              <button className='change-btn' onClick={() => handleChangeBtn()}>Change</button>
             </div>
             <div>
               <span className='fw-medium text-accent-700 fs-450'>${cost.plan}/mo</span>

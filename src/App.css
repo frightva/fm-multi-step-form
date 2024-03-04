@@ -605,7 +605,7 @@ body {
 .p-info-text{
   background-color: transparent;
   color: var(--clr-neutral-200);
-  cursor: pointer;
+  cursor: default;
   padding: 0rem;
   margin: 0;
 }

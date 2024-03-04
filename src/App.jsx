@@ -39,7 +39,7 @@ function App() {
   const [summary_ARRAY, setSummary_ARRAY] = useState([])
 
   const [displayName, setDisplayName] = useState('Monthly')
-  const [togglePlan, setTogglePlan] = useState('arcade')
+  const [togglePlan, setTogglePlan] = useState('Arcade')
   let plan = 0;
 
   const [checked1, setChecked1] = useState(false)
@@ -51,7 +51,10 @@ function App() {
   let addOnValue2 = 0; 
   let addOnValue3 = 0; 
 
-
+  const handleChangeBtn = () => {
+    goTo(1)
+  }
+  
   const { steps, currentStep, stepsLength, handleNextBtn, handlePrevBtn, goTo } = useMultiFormHook([ 
   <Step1 />, 
   <Step2 cost_ARRAY={cost_ARRAY} displayName={displayName} setDisplayName={setDisplayName} togglePlan={togglePlan}
@@ -69,8 +72,10 @@ function App() {
   addOnValue3={addOnValue3}
   />,
   <Step4
+  handleChangeBtn={handleChangeBtn}
   summary_ARRAY={summary_ARRAY} />,
   <ThankYouMsg /> ])
+
 
 
 
@@ -194,7 +199,7 @@ function App() {
               <form onSubmit={(e) => {
                 handleSubmit(e)}}>
 
-                {steps}
+                {steps }
            
                 {currentStep !== stepsLength - 1 && <div className='action-btns | fw-medium'>
                   {currentStep !== 0 && <button type='button' onClick={() => handlePrevBtn()} className='prev-btn'>
